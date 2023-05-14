@@ -1,0 +1,24 @@
+ALGORITHM Sentence_Reader
+INPUT: sentence
+VAR
+    vowelCount: INTEGER : 0;
+    spaceCount: INTEGER: 0;
+    charCount: INTEGER: 0;
+BEGIN
+    //loop through the sentence
+    FOR char in sentence  DO
+        IF char is vowel THEN
+        increment vowelCount by 1;
+        ELSE IF char is whitespace THEN
+        increment spaceCount by 1;
+        ELSE
+        increment charCount by 1;
+        END_IF
+    END_FOR
+    // concatenate string and result
+    totalCount:= vowelCount + spaceCount + charCount;
+    wordCount:= spaceCount + 1;
+    OUTPUT: "Number of vowels: " + vowelCount // output the number of vowels
+    + ", Number of words: " + wordCount // output the number of words
+    + ", Total number of characters: " + totalCount; // output the number of characters
+END
